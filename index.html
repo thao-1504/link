@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển Thị Hình Trái Tim</title>
+    <style>
+        .heart {
+            display: none; /* Ẩn hình trái tim ban đầu */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 20px auto;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<a href="#" id="showHeart">Nhấp vào đây để hiển thị hình trái tim</a>
+<div class="heart" id="heart"></div>
+
+<script>
+    document.getElementById('showHeart').onclick = function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        document.getElementById('heart').style.display = 'block'; // Hiển thị hình trái tim
+    };
+</script>
+
+</body>
+</html>
